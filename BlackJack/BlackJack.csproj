@@ -49,7 +49,6 @@
     <Compile Include="Controller\BlackJackController.cs" />
     <Compile Include="ImageGenerator.cs" />
     <Compile Include="Model\Dealer.cs" />
-    <Compile Include="Exceptions\BustException.cs" />
     <Compile Include="IMainView.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="Model\Player.cs" />

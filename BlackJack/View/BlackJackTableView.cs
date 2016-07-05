@@ -43,20 +43,14 @@ namespace BlackJack.View
 
 
 
-        public Label DealerLabel
-        {
-            get { return lblDealer; }
-        }
+     
 
         public Label DealerTotal
         {
             get { return lblDealerTotal; }
         }
 
-        public Label PlayerLabel
-        {
-            get { return lblPlayer; }
-        }
+ 
 
         public Label PlayerTotal
         {
@@ -71,6 +65,11 @@ namespace BlackJack.View
         public ListView DealerListView
         {
             get { return lvDealer; }
+        }
+
+        private void bPlay_Click(object sender, System.EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
