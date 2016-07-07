@@ -22,9 +22,7 @@ namespace BlackJack.View
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-           
-        
-            
+             
 
         }
 
@@ -39,9 +37,6 @@ namespace BlackJack.View
             bjc.HitDealer();
            
         }
-
-
-
 
         public Label DealerLabel
         {

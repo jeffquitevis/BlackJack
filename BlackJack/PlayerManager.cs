@@ -21,5 +21,14 @@ namespace BlackJack
             return sum;
         }
 
+        public Card AddCard(Card card, IPlayer player)
+        {
+            Card tempCard = null;
+
+            player.PlayerHand.Add(card);
+
+            return tempCard;
+        }
+
     }
 }

@@ -31,21 +31,19 @@ namespace BlackJack.Controller
             InitialDeal();
 
         }
-
-
+        
         public void HitPlayer(Card card)
         {
             
             PlayerManager manageHand = new PlayerManager();
-            player.AddCard(card);
+
+            manageHand.AddCard(card, player);
+            //player.AddCard(card);
             pHandTotal =  manageHand.CalculateHand(player);
 
             view.PlayerTotal.Text = Convert.ToString(pHandTotal);
             image.GenerateImage(card.ToString(),view.PlayerListView);    
-                        
-           
-     
-
+                                        
             if (pHandTotal > 21)
             {
                 MessageBox.Show(@"Dealer Wins!");
@@ -62,13 +60,11 @@ namespace BlackJack.Controller
           
                 while (dHandTotal < 16)
                 {
-                    Card tempCard = dealer.AddCard(deckCards.Pop());
+                    Card tempCard = manageHand.AddCard(deckCards.Pop(), dealer);
                     dHandTotal += manageHand.CalculateHand(dealer);
                     image.GenerateImage(tempCard.ToString(), view.DealerListView);
                 }
-            
-     
-
+             
             view.DealerTotal.Text = Convert.ToString(dHandTotal);
 
 
@@ -87,22 +83,25 @@ namespace BlackJack.Controller
         public void InitialDeal()
         {
 
-        
-
-            List<IPlayer> dealPlayers = new List<IPlayer>() { dealer, player,dealer };
-           
+            List<IPlayer> dealPlayers = new List<IPlayer>() { player, dealer, player };         
 
             for (int x = 0; x < dealPlayers.Count; x++)
             {
-               dealPlayers[x].AddCard(deckCards.Pop());                              
-                
-            }
-            for (int x = 0; x < player.PlayerHand.Count; x++)
-            {
-                PlayerManager playerHand = new PlayerManager();
-                pHandTotal = playerHand.CalculateHand(player);
+                PlayerManager manageHand = new PlayerManager();
+                manageHand.AddCard(deckCards.Pop(), dealPlayers[x]);
 
+
+                if (dealPlayers[x] == player)
+                {
+                    pHandTotal = manageHand.CalculateHand(dealPlayers[x]);
+                }
+                else
+                {
+                    dHandTotal = manageHand.CalculateHand(dealPlayers[x]);
+                }
             }
+          
+            
 
             for (int x = 0; x < dealer.PlayerHand.Count; x++)
             {
@@ -111,27 +110,12 @@ namespace BlackJack.Controller
 
             for (int x = 0; x < player.PlayerHand.Count; x++)
             {
-                image.GenerateImage(dealer.PlayerHand[x].ToString(), view.PlayerListView);
+                image.GenerateImage(player.PlayerHand[x].ToString(), view.PlayerListView);
             }
-
-            for (int x = 0; x < dealer.PlayerHand.Count; x++)
-            {
-                PlayerManager playerHand = new PlayerManager();
-                dHandTotal = playerHand.CalculateHand(dealer);
-            }
-
-          
 
             view.PlayerTotal.Text = Convert.ToString(pHandTotal);
             view.DealerTotal.Text = Convert.ToString(dHandTotal);
-
-
-
-
         }
-
-
- 
 
     }
 }

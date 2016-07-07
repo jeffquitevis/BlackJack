@@ -13,12 +13,7 @@ namespace BlackJack.Model
             playerHand.Add(card);
             return card;
         }
-
-     
-        public void Stay()
-        {
-           
-        }
+    
 
 
         public List<Card> PlayerHand

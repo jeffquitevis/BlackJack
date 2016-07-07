@@ -12,7 +12,6 @@ namespace BlackJack
     {
 
         Card AddCard(Card card);
-        void Stay();  
         List<Card> PlayerHand { get; }    
        
 

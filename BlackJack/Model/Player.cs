@@ -16,13 +16,6 @@ namespace BlackJack.Model
             return card;
         }
 
-     
-
-        public void Stay()
-        {
-            
-        }
-
 
         public List<Card> PlayerHand
         {
