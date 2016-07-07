@@ -9,9 +9,9 @@ namespace BlackJack
 {
     public interface IMainView
     {
-        Label DealerLabel { get; }
+       
         Label DealerTotal { get; }
-        Label PlayerLabel { get; }
+   
         Label PlayerTotal { get; }
         ListView PlayerListView { get; }
         ListView DealerListView { get; }
