@@ -37,18 +37,7 @@ namespace BlackJack.View
             bjc.HitDealer();
            
         }
-
-<<<<<<< HEAD
-        public Label DealerLabel
-        {
-            get { return lblDealer; }
-        }
-=======
-
-
-
-     
->>>>>>> dd32330063f11d39c59fb21082410df7235b1715
+   
 
         public Label DealerTotal
         {
@@ -75,6 +64,11 @@ namespace BlackJack.View
         private void bPlay_Click(object sender, System.EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void lvPlayer_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

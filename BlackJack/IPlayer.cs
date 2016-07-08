@@ -11,7 +11,7 @@ namespace BlackJack
     public interface IPlayer
     {
 
-        Card AddCard(Card card);
+
         List<Card> PlayerHand { get; }    
        
 

@@ -19,7 +19,7 @@ namespace BlackJack
         public void GenerateImage(string fileName, ListView listView)
         {
            
-            imageList.Images.Add(Image.FromFile(@"c:\users\stephen\desktop\assets\" + fileName + FileType));
+            imageList.Images.Add(Image.FromFile(@"c:\users\jeff\desktop\assets\" + fileName + FileType));
             imageList.ImageSize = new Size(150, 150);    
             
             listView.LargeImageList = imageList;

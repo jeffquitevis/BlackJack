@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bHit = new System.Windows.Forms.Button();
@@ -117,12 +117,13 @@
             this.lvPlayer.BackColor = System.Drawing.Color.Green;
             this.lvPlayer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvPlayer.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem1});
             this.lvPlayer.Location = new System.Drawing.Point(12, 406);
             this.lvPlayer.Name = "lvPlayer";
             this.lvPlayer.Size = new System.Drawing.Size(1127, 274);
             this.lvPlayer.TabIndex = 9;
             this.lvPlayer.UseCompatibleStateImageBehavior = false;
+            this.lvPlayer.SelectedIndexChanged += new System.EventHandler(this.lvPlayer_SelectedIndexChanged);
             // 
             // bPlay
             // 
